@@ -1,0 +1,7 @@
+## IPs whitelisting demo
+#Cloudflare DNS
+1.1.1.1/32
+#Google DNS
+8.8.8.8/32
+#RFC1918 bogos network
+10.0.1.0/24
