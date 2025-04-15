@@ -1,0 +1,41 @@
+{
+  // Name that appears in VS Code
+  "name": "FortiGate IP Manager Dev",
+  
+  // Reference your root-level docker-compose.yml
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+
+  // Tell VS Code which service in docker-compose to attach to
+  // (the service name, not container_name)
+  "service": "backend",
+
+  // The folder in the container where VS Code will open
+  "workspaceFolder": "/workspace",
+  
+  // Stop the docker-compose services when you close the dev container
+  "shutdownAction": "stopCompose",
+
+  // Basic Python settings, optional
+  "settings": {
+    "python.pythonPath": "/usr/local/bin/python"
+  },
+
+  // Extensions you want installed automatically in the dev container
+  "extensions": [
+    "ms-python.python",
+    "ms-azuretools.vscode-docker"
+  ],
+
+  // Forward the ports so you can access them from your machine
+  "forwardPorts": [8000, 5000],
+
+  // The user inside the container. 'root' is simplest for dev.
+  "remoteUser": "root",
+
+  // Mount your local repo folder into the container at /workspace
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ]
+}
