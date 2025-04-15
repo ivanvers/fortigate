@@ -1,0 +1,4 @@
+# file: backend/requirements.txt
+fastapi
+uvicorn
+pydantic
