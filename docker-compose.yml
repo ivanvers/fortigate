@@ -1,0 +1,11 @@
+services:
+  backend:
+    build: ./backend
+    container_name: ipmanager-backend
+    # No volume needed if devcontainer is mounting code
+    ports:
+      - 8000:8000
+    environment:
+      - DB_PATH=/app_data/data.db
+    # The command might remain uvicorn or be overridden by devcontainer if you want.
+    # command: uvicorn main:app --host 0.0.0.0 --port 8000
